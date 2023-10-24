@@ -1,4 +1,4 @@
-# MinecraftPurpleTheme
+# panel-theme
 
 Install script:
 ```sh

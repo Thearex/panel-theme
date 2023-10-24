@@ -13,7 +13,7 @@ installTheme(){
     echo "Installing theme..."
     cd /var/www/pterodactyl
     rm -r MinecraftPurpleTheme
-    git clone https://github.com/Angelillo15/MinecraftPurpleTheme.git
+    git clone https://github.com/Thearex/panel-theme.git
     cd MinecraftPurpleTheme
     rm /var/www/pterodactyl/resources/scripts/MinecraftPurpleTheme.css
     rm /var/www/pterodactyl/resources/scripts/index.tsx
@@ -47,7 +47,7 @@ installThemeQuestion(){
 }
 
 repair(){
-    bash <(curl https://raw.githubusercontent.com/Angelillo15/MinecraftPurpleTheme/main/repair.sh)
+    bash <(curl https://raw.githubusercontent.com/Thearex/panel-theme/main/repair.sh)
 }
 
 restoreBackUp(){
@@ -66,10 +66,10 @@ echo ""
 echo "Discord: https://discord.angelillo15.es/"
 echo "Website: https://angelillo15.es/"
 echo ""
-echo "[1] Install theme"
+echo "[1] Asenna tama hauska theme!"
 echo "[2] Restore backup"
 echo "[3] Repair panel (use if you have an error in the theme installation)"
-echo "[4] Exit"
+echo "[4] Lahde ja et asenna themea"
 
 read -p "Please enter a number: " choice
 if [ $choice == "1" ]

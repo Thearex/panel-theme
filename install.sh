@@ -9,16 +9,16 @@ clear
 
 installTheme(){
     cd /var/www/
-    tar -cvf MinecraftPurpleThemebackup.tar.gz pterodactyl
-    echo "Installing theme..."
+    tar -cvf panel-themebackup.tar.gz pterodactyl
+    echo "Asennetaan tätä hauskaa themea!"
     cd /var/www/pterodactyl
-    rm -r MinecraftPurpleTheme
+    rm -r panel-theme
     git clone https://github.com/Thearex/panel-theme.git
-    cd MinecraftPurpleTheme
-    rm /var/www/pterodactyl/resources/scripts/MinecraftPurpleTheme.css
+    cd panel-theme
+    rm /var/www/pterodactyl/resources/scripts/panel-theme.css
     rm /var/www/pterodactyl/resources/scripts/index.tsx
     mv index.tsx /var/www/pterodactyl/resources/scripts/index.tsx
-    mv MinecraftPurpleTheme.css /var/www/pterodactyl/resources/scripts/MinecraftPurpleTheme.css
+    mv panel-theme.css /var/www/pterodactyl/resources/scripts/panel-theme.css
     cd /var/www/pterodactyl
 
     curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
@@ -31,8 +31,6 @@ installTheme(){
     cd /var/www/pterodactyl
     yarn build:production
     sudo php artisan optimize:clear
-
-
 }
 
 installThemeQuestion(){
@@ -53,13 +51,14 @@ repair(){
 restoreBackUp(){
     echo "Restoring backup..."
     cd /var/www/
-    tar -xvf MinecraftPurpleThemebackup.tar.gz
-    rm MinecraftPurpleThemebackup.tar.gz
+    tar -xvf panel-themebackup.tar.gz
+    rm panel-themebackup.tar.gz
 
     cd /var/www/pterodactyl
     yarn build:production
     sudo php artisan optimize:clear
 }
+
 echo "Copyright (c) 2022 Angelillo15 | angelillo15.es"
 echo "This program is free software: you can redistribute it and/or modify"
 echo ""
